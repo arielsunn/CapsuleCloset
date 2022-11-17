@@ -18,20 +18,29 @@ namespace CapsuleCloset
             InitializeComponent();
         }
 
-        ArrayList shirt = new ArrayList();
+        ArrayList shirts = new ArrayList();
         string strShirts = string.Empty;
+
+        ArrayList pants = new ArrayList();
+        string strPants = string.Empty;
+
+        ArrayList jac = new ArrayList();
+        string strJac = string.Empty;
+
+        ArrayList acc = new ArrayList();
+        string strAcc = string.Empty;
 
         private void frmWardrobe_Load(object sender, EventArgs e)
         {
             //initial 7 shirts
             for (int i = 0; i < 7; i++)
             {
-                shirt.Add(i);
-                shirt[i] = "Shirt " + i;
+                shirts.Add(i);
+                shirts[i] = "Shirt " + i;
             }
 
             //Iterating through items - Using foreach loop, then print within respective textbox
-            foreach (string strName in shirt)
+            foreach (string strName in shirts)
             {
                 strShirts += strName + "\r\n";
             }
@@ -69,25 +78,45 @@ namespace CapsuleCloset
            // Console.WriteLine(strStore);
         }
 
+        public void saveWardrobe(string str, TextBox txt, ArrayList array) {
+            //saves edits in textbox to shirts array 
+            //covers edit, add, and delete functionalities 
+            str = txt.Text;
+            array.Clear();
+            string[] words = txt.Text.Split(new string[] { Environment.NewLine },
+                StringSplitOptions.None);
+
+            foreach (var word in words)
+            {
+                array.Add(word);
+            }
+        }
         private void txtShirts_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void btnShirts_Click(object sender, EventArgs e)
+        private void txtPants_TextChanged(object sender, EventArgs e)
         {
-            //saves edits in textbox to shirts array 
-            //covers edit, add, and delete functionalities 
-            strShirts = txtShirts.Text;
-            shirt.Clear();
-            string[] words = txtShirts.Text.Split(new string[] { Environment.NewLine },
-                StringSplitOptions.None);
 
-            foreach (var word in words)
-            {
-                shirt.Add(word);
-            }
+        }
 
+        private void txtJac_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAcc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            saveWardrobe(strShirts, txtShirts, shirts);
+            saveWardrobe(strPants, txtPants, pants);
+            saveWardrobe(strJac, txtJac, jac);
+            saveWardrobe(strAcc, txtAcc, acc);
         }
     }
 }
