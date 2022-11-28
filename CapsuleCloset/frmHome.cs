@@ -22,10 +22,21 @@ namespace CapsuleCloset
 
         }
 
+        public void shuffle(TextBox day) {
+
+            frmWardrobe.randomize(shirts);
+
+        }
+
         private void btnEditWardrobe_Click(object sender, EventArgs e)
         {
             frmWardrobe form = new frmWardrobe();
             form.Show();
+        }
+
+        private void btnShuffle_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

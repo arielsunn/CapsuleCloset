@@ -45,6 +45,7 @@ namespace CapsuleCloset
             this.lblFri = new System.Windows.Forms.Label();
             this.lblSat = new System.Windows.Forms.Label();
             this.lblSun = new System.Windows.Forms.Label();
+            this.btnShuffle = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelCapsule
@@ -59,7 +60,7 @@ namespace CapsuleCloset
             // 
             // btnEditWardrobe
             // 
-            this.btnEditWardrobe.Location = new System.Drawing.Point(350, 500);
+            this.btnEditWardrobe.Location = new System.Drawing.Point(475, 475);
             this.btnEditWardrobe.Name = "btnEditWardrobe";
             this.btnEditWardrobe.Size = new System.Drawing.Size(100, 25);
             this.btnEditWardrobe.TabIndex = 1;
@@ -193,11 +194,22 @@ namespace CapsuleCloset
             this.lblSun.Text = "Sunday";
             this.lblSun.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnShuffle
+            // 
+            this.btnShuffle.Location = new System.Drawing.Point(225, 475);
+            this.btnShuffle.Name = "btnShuffle";
+            this.btnShuffle.Size = new System.Drawing.Size(125, 25);
+            this.btnShuffle.TabIndex = 16;
+            this.btnShuffle.Text = "New Week Shuffle!";
+            this.btnShuffle.UseVisualStyleBackColor = true;
+            this.btnShuffle.Click += new System.EventHandler(this.btnShuffle_Click);
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnShuffle);
             this.Controls.Add(this.lblSun);
             this.Controls.Add(this.lblSat);
             this.Controls.Add(this.lblFri);
@@ -240,6 +252,7 @@ namespace CapsuleCloset
         private System.Windows.Forms.Label lblFri;
         private System.Windows.Forms.Label lblSat;
         private System.Windows.Forms.Label lblSun;
+        private System.Windows.Forms.Button btnShuffle;
     }
 }
 

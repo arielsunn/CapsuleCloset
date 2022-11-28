@@ -50,9 +50,8 @@ namespace CapsuleCloset
         }
 
         //creates new array with shuffled contents of shirts/pants/jackets/accessories array 
-        public void shuffle(ArrayList array)
+        public void randomize(ArrayList array)
         {
-             
             //stops program from editing array original values
             ArrayList dup = new ArrayList(array); ;
             int length = array.Count;
