@@ -22,9 +22,15 @@ namespace CapsuleCloset
 
         }
 
-        public void shuffle(TextBox day) {
+        public void shuffleButton(TextBox day) {
 
-            frmWardrobe.randomize(shirts);
+            frmWardrobe.shuffle(frmWardrobe.callMon());
+            frmWardrobe.shuffle(frmWardrobe.callTues());
+            frmWardrobe.shuffle(frmWardrobe.callWed());
+            frmWardrobe.shuffle(frmWardrobe.callThurs());
+            frmWardrobe.shuffle(frmWardrobe.callFri());
+            frmWardrobe.shuffle(frmWardrobe.callSat());
+            frmWardrobe.shuffle(frmWardrobe.callSun());
 
         }
 
@@ -35,6 +41,41 @@ namespace CapsuleCloset
         }
 
         private void btnShuffle_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtMon_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtTues_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtWed_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtThurs_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtFri_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSat_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtSun_TextChanged(object sender, EventArgs e)
         {
 
         }

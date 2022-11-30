@@ -75,6 +75,7 @@ namespace CapsuleCloset
             this.txtMon.Name = "txtMon";
             this.txtMon.Size = new System.Drawing.Size(100, 100);
             this.txtMon.TabIndex = 2;
+            this.txtMon.TextChanged += new System.EventHandler(this.txtMon_TextChanged);
             // 
             // txtTues
             // 
@@ -83,6 +84,7 @@ namespace CapsuleCloset
             this.txtTues.Name = "txtTues";
             this.txtTues.Size = new System.Drawing.Size(100, 100);
             this.txtTues.TabIndex = 3;
+            this.txtTues.TextChanged += new System.EventHandler(this.txtTues_TextChanged);
             // 
             // txtWed
             // 
@@ -91,6 +93,7 @@ namespace CapsuleCloset
             this.txtWed.Name = "txtWed";
             this.txtWed.Size = new System.Drawing.Size(100, 100);
             this.txtWed.TabIndex = 4;
+            this.txtWed.TextChanged += new System.EventHandler(this.txtWed_TextChanged);
             // 
             // txtSat
             // 
@@ -99,6 +102,7 @@ namespace CapsuleCloset
             this.txtSat.Name = "txtSat";
             this.txtSat.Size = new System.Drawing.Size(100, 100);
             this.txtSat.TabIndex = 7;
+            this.txtSat.TextChanged += new System.EventHandler(this.txtSat_TextChanged);
             // 
             // txtFri
             // 
@@ -107,6 +111,7 @@ namespace CapsuleCloset
             this.txtFri.Name = "txtFri";
             this.txtFri.Size = new System.Drawing.Size(100, 100);
             this.txtFri.TabIndex = 6;
+            this.txtFri.TextChanged += new System.EventHandler(this.txtFri_TextChanged);
             // 
             // txtThurs
             // 
@@ -115,6 +120,7 @@ namespace CapsuleCloset
             this.txtThurs.Name = "txtThurs";
             this.txtThurs.Size = new System.Drawing.Size(100, 100);
             this.txtThurs.TabIndex = 5;
+            this.txtThurs.TextChanged += new System.EventHandler(this.txtThurs_TextChanged);
             // 
             // txtSun
             // 
@@ -123,6 +129,7 @@ namespace CapsuleCloset
             this.txtSun.Name = "txtSun";
             this.txtSun.Size = new System.Drawing.Size(100, 100);
             this.txtSun.TabIndex = 8;
+            this.txtSun.TextChanged += new System.EventHandler(this.txtSun_TextChanged);
             // 
             // lblMon
             // 
