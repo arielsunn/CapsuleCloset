@@ -24,7 +24,7 @@ namespace CapsuleCloset
 
         public void shuffleButton(TextBox day) {
 
-            frmWardrobe.shuffle(frmWardrobe.callMon());
+            frmWardrobe.randomize(frmWardrobe.shirts());
             frmWardrobe.shuffle(frmWardrobe.callTues());
             frmWardrobe.shuffle(frmWardrobe.callWed());
             frmWardrobe.shuffle(frmWardrobe.callThurs());

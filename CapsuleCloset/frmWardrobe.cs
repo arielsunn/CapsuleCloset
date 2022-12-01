@@ -18,20 +18,24 @@ namespace CapsuleCloset
             InitializeComponent();
         }
 
-        public static List<string> shirts { get; set; }
-       // ArrayList shirts = new ArrayList();
+        //public static List<string> shirts { get; set; }
+        // ArrayList shirts = new ArrayList();
+        List<string> shirts = new List<string>();
         string strShirts = string.Empty;
 
-        public static List<string> pants { get; set; }
+        //public static List<string> pants { get; set; }
         //ArrayList pants = new ArrayList();
+        List<string> pants = new List<string>();
         string strPants = string.Empty;
 
-        public static List<string> jac { get; set; }
+        //public static List<string> jac { get; set; }
         //ArrayList jac = new ArrayList();
+        List<string> jac = new List<string>();
         string strJac = string.Empty;
 
-        public static List<string> acc { get; set; }
+        //public static List<string> acc { get; set; }
         //ArrayList acc = new ArrayList();
+        List<string> acc = new List<string>();
         string strAcc = string.Empty;
 
         public static List<string> mon { get; set; }
@@ -45,11 +49,11 @@ namespace CapsuleCloset
         private void frmWardrobe_Load(object sender, EventArgs e)
         {
             //initial 7 shirts
-            /*for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 7; i++)
             {
-                shirts.Add("shirt" + i);
-                shirts[i] = "Shirt " + i;
-            }*/
+                shirts.Add("Shirt" + i);
+                //shirts[i] = "Shirt " + i;
+            }
 
             //Iterating through items - Using foreach loop, then print within respective textbox
             foreach (string strName in shirts)
@@ -64,17 +68,14 @@ namespace CapsuleCloset
         public static List<string> callMon() {
             return mon;
         }
-
         public static List<string> callTues()
         {
             return tues;
         }
-
         public static List<string> callWed()
         {
             return wed;
         }
-
         public static List<string> callThurs()
         {
             return thurs;
@@ -92,10 +93,8 @@ namespace CapsuleCloset
             return sun;
         }
 
-
-
         //creates new array with shuffled contents of shirts/pants/jackets/accessories array 
-        public static void randomize(List<string> item, List<string>day)
+        public static void randomize(List<string> item)
         {
             //stops program from editing array original values
             List<string> dup = new List<string>(item); ;
@@ -110,21 +109,21 @@ namespace CapsuleCloset
                 int r = rand.Next(0, dup.Count - 1);
                 store.Add(dup[r]);
                 dup.RemoveAt(r);
-                day.Add(store[i]);
             }
+
+            mon.Add(store[0]);
+            tues.Add(store[1]);
+            wed.Add(store[2]);
+            thurs.Add(store[3]);
+            fri.Add(store[4]);
+            sat.Add(store[5]);
+            sun.Add(store[6]);
 
             //prints the new randomized array into new textbox
             foreach (string strName in store)
             {
                 strStore += strName + "\r\n";
             }
-        }
-
-        public static void shuffle(List<string> day) {
-            randomize(shirts, day);
-            randomize(pants, day);
-            randomize(jac, day);
-            randomize(acc, day);
         }
 
         public void saveWardrobe(string str, TextBox txt, List<string> list) {
@@ -139,7 +138,12 @@ namespace CapsuleCloset
             {
                 list.Add(word);
             }
+
+            while (list.Count < 7) {
+                list.Add("No more items");
+            }
         }
+
         private void txtShirts_TextChanged(object sender, EventArgs e)
         {
 
