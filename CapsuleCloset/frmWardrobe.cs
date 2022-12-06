@@ -18,24 +18,24 @@ namespace CapsuleCloset
             InitializeComponent();
         }
 
-        //public static List<string> shirts { get; set; }
+        public static List<string> shirts = new List<string>();
         // ArrayList shirts = new ArrayList();
-        List<string> shirts = new List<string>();
+        //List<string> shirts = new List<string>();
         string strShirts = string.Empty;
 
-        //public static List<string> pants { get; set; }
+        public static List<string> pants = new List<string>();
         //ArrayList pants = new ArrayList();
-        List<string> pants = new List<string>();
+        //List<string> pants = new List<string>();
         string strPants = string.Empty;
 
-        //public static List<string> jac { get; set; }
+        public static List<string> jac = new List<string>();
         //ArrayList jac = new ArrayList();
-        List<string> jac = new List<string>();
+        //List<string> jac = new List<string>();
         string strJac = string.Empty;
 
-        //public static List<string> acc { get; set; }
+        public static List<string> acc = new List<string>();
         //ArrayList acc = new ArrayList();
-        List<string> acc = new List<string>();
+        //List<string> acc = new List<string>();
         string strAcc = string.Empty;
 
         public static List<string> mon { get; set; }
@@ -46,10 +46,28 @@ namespace CapsuleCloset
         public static List<string> sat { get; set; }
         public static List<string> sun { get; set; }
 
+        public static List<string> callShirts()
+        {
+            return shirts;
+        }
+        public static List<string> callPants()
+        {
+            return pants;
+        }
+        public static List<string> callJac()
+        {
+            return jac;
+        }
+        public static List<string> callAcc()
+        {
+            return acc;
+        }
+
         private void frmWardrobe_Load(object sender, EventArgs e)
         {
+            this.CenterToScreen();
             //initial 7 shirts
-            for (int i = 0; i < 7; i++)
+            /*for (int i = 0; i < 7; i++)
             {
                 shirts.Add("Shirt" + i);
                 //shirts[i] = "Shirt " + i;
@@ -59,7 +77,7 @@ namespace CapsuleCloset
             foreach (string strName in shirts)
             {
                 strShirts += strName + "\r\n";
-            }
+            }*/
 
             txtShirts.Text = strShirts;
             Console.WriteLine(strShirts);
@@ -130,11 +148,13 @@ namespace CapsuleCloset
             //saves edits in textbox to shirts array 
             //covers edit, add, and delete functionalities 
             str = txt.Text;
-            list.Clear();
+            /*if (list.Count() != 0) {
+                list.Clear();
+            }*/
             string[] words = txt.Text.Split(new string[] { Environment.NewLine },
                 StringSplitOptions.None);
 
-            foreach (var word in words)
+            foreach (string word in words)
             {
                 list.Add(word);
             }

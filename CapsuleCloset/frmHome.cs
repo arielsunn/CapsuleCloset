@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -19,30 +20,34 @@ namespace CapsuleCloset
 
         private void frmHome_Load(object sender, EventArgs e)
         {
-
+            this.CenterToScreen();
         }
 
         public void shuffleButton(TextBox day) {
 
-            frmWardrobe.randomize(frmWardrobe.shirts());
-            frmWardrobe.shuffle(frmWardrobe.callTues());
-            frmWardrobe.shuffle(frmWardrobe.callWed());
-            frmWardrobe.shuffle(frmWardrobe.callThurs());
-            frmWardrobe.shuffle(frmWardrobe.callFri());
-            frmWardrobe.shuffle(frmWardrobe.callSat());
-            frmWardrobe.shuffle(frmWardrobe.callSun());
-
+            frmWardrobe.randomize(frmWardrobe.callShirts());
+            frmWardrobe.randomize(frmWardrobe.callPants());
+            frmWardrobe.randomize(frmWardrobe.callJac());
+            frmWardrobe.randomize(frmWardrobe.callAcc());
         }
 
         private void btnEditWardrobe_Click(object sender, EventArgs e)
         {
-            frmWardrobe form = new frmWardrobe();
-            form.Show();
+            //Close current form
+            this.Close();
+            //Create a thread to RUN a NEW application with the desired form
+            Thread t = new Thread(new ThreadStart(OpenWardrobeForm));
+            t.Start();
+        }
+
+        private void OpenWardrobeForm()
+        {
+            //RUNs a NEW application with the desired form
+            Application.Run(new frmWardrobe());
         }
 
         private void btnShuffle_Click(object sender, EventArgs e)
         {
-
         }
 
         private void txtMon_TextChanged(object sender, EventArgs e)
