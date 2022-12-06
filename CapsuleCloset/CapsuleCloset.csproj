@@ -58,6 +58,7 @@
     <Compile Include="frmWardrobe.Designer.cs">
       <DependentUpon>frmWardrobe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Processes\WardrobeObject.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmHome.resx">
