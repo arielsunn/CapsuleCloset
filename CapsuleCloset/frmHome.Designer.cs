@@ -31,21 +31,21 @@ namespace CapsuleCloset
         {
             this.labelCapsule = new System.Windows.Forms.Label();
             this.btnEditWardrobe = new System.Windows.Forms.Button();
-            this.txtMon = new System.Windows.Forms.TextBox();
-            this.txtTues = new System.Windows.Forms.TextBox();
             this.txtWed = new System.Windows.Forms.TextBox();
             this.txtSat = new System.Windows.Forms.TextBox();
             this.txtFri = new System.Windows.Forms.TextBox();
             this.txtThurs = new System.Windows.Forms.TextBox();
             this.txtSun = new System.Windows.Forms.TextBox();
             this.lblMon = new System.Windows.Forms.Label();
-            this.lblTues = new System.Windows.Forms.Label();
             this.lblWed = new System.Windows.Forms.Label();
             this.lblThurs = new System.Windows.Forms.Label();
             this.lblFri = new System.Windows.Forms.Label();
             this.lblSat = new System.Windows.Forms.Label();
             this.lblSun = new System.Windows.Forms.Label();
             this.btnShuffle = new System.Windows.Forms.Button();
+            this.txtTues = new System.Windows.Forms.TextBox();
+            this.lblTues = new System.Windows.Forms.Label();
+            this.txtMon = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // labelCapsule
@@ -67,24 +67,6 @@ namespace CapsuleCloset
             this.btnEditWardrobe.Text = "Edit Wardrobe";
             this.btnEditWardrobe.UseVisualStyleBackColor = true;
             this.btnEditWardrobe.Click += new System.EventHandler(this.btnEditWardrobe_Click);
-            // 
-            // txtMon
-            // 
-            this.txtMon.Location = new System.Drawing.Point(200, 175);
-            this.txtMon.Multiline = true;
-            this.txtMon.Name = "txtMon";
-            this.txtMon.Size = new System.Drawing.Size(100, 100);
-            this.txtMon.TabIndex = 2;
-            this.txtMon.TextChanged += new System.EventHandler(this.txtMon_TextChanged);
-            // 
-            // txtTues
-            // 
-            this.txtTues.Location = new System.Drawing.Point(350, 175);
-            this.txtTues.Multiline = true;
-            this.txtTues.Name = "txtTues";
-            this.txtTues.Size = new System.Drawing.Size(100, 100);
-            this.txtTues.TabIndex = 3;
-            this.txtTues.TextChanged += new System.EventHandler(this.txtTues_TextChanged);
             // 
             // txtWed
             // 
@@ -140,16 +122,6 @@ namespace CapsuleCloset
             this.lblMon.TabIndex = 9;
             this.lblMon.Text = "Monday";
             this.lblMon.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // lblTues
-            // 
-            this.lblTues.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTues.Location = new System.Drawing.Point(350, 150);
-            this.lblTues.Name = "lblTues";
-            this.lblTues.Size = new System.Drawing.Size(100, 25);
-            this.lblTues.TabIndex = 10;
-            this.lblTues.Text = "Tuesday";
-            this.lblTues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblWed
             // 
@@ -211,6 +183,34 @@ namespace CapsuleCloset
             this.btnShuffle.UseVisualStyleBackColor = true;
             this.btnShuffle.Click += new System.EventHandler(this.btnShuffle_Click);
             // 
+            // txtTues
+            // 
+            this.txtTues.Location = new System.Drawing.Point(350, 175);
+            this.txtTues.Multiline = true;
+            this.txtTues.Name = "txtTues";
+            this.txtTues.Size = new System.Drawing.Size(100, 100);
+            this.txtTues.TabIndex = 3;
+            this.txtTues.TextChanged += new System.EventHandler(this.txtTues_TextChanged);
+            // 
+            // lblTues
+            // 
+            this.lblTues.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTues.Location = new System.Drawing.Point(350, 150);
+            this.lblTues.Name = "lblTues";
+            this.lblTues.Size = new System.Drawing.Size(100, 25);
+            this.lblTues.TabIndex = 10;
+            this.lblTues.Text = "Tuesday";
+            this.lblTues.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // txtMon
+            // 
+            this.txtMon.Location = new System.Drawing.Point(200, 175);
+            this.txtMon.Multiline = true;
+            this.txtMon.Name = "txtMon";
+            this.txtMon.Size = new System.Drawing.Size(100, 100);
+            this.txtMon.TabIndex = 2;
+            this.txtMon.TextChanged += new System.EventHandler(this.txtMon_TextChanged);
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -245,21 +245,21 @@ namespace CapsuleCloset
 
         private System.Windows.Forms.Label labelCapsule;
         private System.Windows.Forms.Button btnEditWardrobe;
-        private System.Windows.Forms.TextBox txtMon;
-        private System.Windows.Forms.TextBox txtTues;
         private System.Windows.Forms.TextBox txtWed;
         private System.Windows.Forms.TextBox txtSat;
         private System.Windows.Forms.TextBox txtFri;
         private System.Windows.Forms.TextBox txtThurs;
         private System.Windows.Forms.TextBox txtSun;
         private System.Windows.Forms.Label lblMon;
-        private System.Windows.Forms.Label lblTues;
         private System.Windows.Forms.Label lblWed;
         private System.Windows.Forms.Label lblThurs;
         private System.Windows.Forms.Label lblFri;
         private System.Windows.Forms.Label lblSat;
         private System.Windows.Forms.Label lblSun;
         private System.Windows.Forms.Button btnShuffle;
+        private System.Windows.Forms.TextBox txtTues;
+        private System.Windows.Forms.Label lblTues;
+        private System.Windows.Forms.TextBox txtMon;
     }
 }
 
