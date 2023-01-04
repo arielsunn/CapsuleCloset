@@ -54,29 +54,23 @@ namespace CapsuleCloset
         }
 
 
-        public void saveWardrobe(string str, TextBox txt, List<string> list) {
-            //saves edits in textbox to shirts array 
-            //covers edit, add, and delete functionalities 
-            str = txt.Text;
-            /*if (list.Count() != 0) {
-                list.Clear();
-            }*/
-            string[] words = txt.Text.Split(new string[] { Environment.NewLine },
-                StringSplitOptions.None);
+        public void saveWardrobe(DataTable table, DataGridView dg) {
 
-            foreach (string word in words)
-            {
-                list.Add(word);
+            while (table.Rows.Count < 7) {
+
+                table.Rows.Add("No more items");
             }
 
-            while (list.Count < 7) {
-                list.Add("No more items");
-            }
+            dg.DataSource = table;
         }
 
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            saveWardrobe(shirts, dgShirts);
+            saveWardrobe(pants, dgPants);
+            saveWardrobe(jac, dgJackets);
+            saveWardrobe(acc, dgAccessories);
             //Close current form
             this.Close();
             //Create a thread to RUN a NEW application with the desired form
