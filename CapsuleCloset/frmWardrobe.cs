@@ -54,12 +54,19 @@ namespace CapsuleCloset
         }
 
 
-        public void saveWardrobe(DataTable table, DataGridView dg) {
-
-            while (table.Rows.Count < 7) {
-
-                table.Rows.Add("No more items");
+        public void saveWardrobe(DataTable table, DataGridView dg) 
+        {
+            for (int i = table.Rows.Count; i < 7; i++)
+            {
+                DataRow row = new DataRow("no more items");
+                table.Rows.Add(row);
             }
+            /*while (table.Rows.Count < 7) {
+
+                table.NewRow();
+                table.Rows.Add("No more items");
+            }*/
+            table.AcceptChanges();
 
             dg.DataSource = table;
         }
