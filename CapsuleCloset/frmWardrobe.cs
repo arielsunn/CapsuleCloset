@@ -58,14 +58,13 @@ namespace CapsuleCloset
         {
             for (int i = table.Rows.Count; i < 7; i++)
             {
-                DataRow row = new DataRow("no more items");
+                DataRow row = table.NewRow();
+                row[0] = "no more items";
                 table.Rows.Add(row);
+                dg.Update();
+                dg.Refresh();
+                
             }
-            /*while (table.Rows.Count < 7) {
-
-                table.NewRow();
-                table.Rows.Add("No more items");
-            }*/
             table.AcceptChanges();
 
             dg.DataSource = table;

@@ -115,43 +115,5 @@ namespace CapsuleCloset
             //RUNs a NEW application with the desired form
             Application.Run(new frmWardrobe(shirts, pants, jac, acc));
         }
-
-        private void btnShuffle_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void txtMon_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void txtTues_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtWed_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtThurs_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtFri_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSat_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtSun_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }
