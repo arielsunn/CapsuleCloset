@@ -73,6 +73,7 @@ namespace CapsuleCloset
             this.txtWed.Location = new System.Drawing.Point(500, 175);
             this.txtWed.Multiline = true;
             this.txtWed.Name = "txtWed";
+            this.txtWed.ReadOnly = true;
             this.txtWed.Size = new System.Drawing.Size(100, 100);
             this.txtWed.TabIndex = 4;
             // 
@@ -81,6 +82,7 @@ namespace CapsuleCloset
             this.txtSat.Location = new System.Drawing.Point(425, 325);
             this.txtSat.Multiline = true;
             this.txtSat.Name = "txtSat";
+            this.txtSat.ReadOnly = true;
             this.txtSat.Size = new System.Drawing.Size(100, 100);
             this.txtSat.TabIndex = 7;
             // 
@@ -89,6 +91,7 @@ namespace CapsuleCloset
             this.txtFri.Location = new System.Drawing.Point(275, 325);
             this.txtFri.Multiline = true;
             this.txtFri.Name = "txtFri";
+            this.txtFri.ReadOnly = true;
             this.txtFri.Size = new System.Drawing.Size(100, 100);
             this.txtFri.TabIndex = 6;
             // 
@@ -97,6 +100,7 @@ namespace CapsuleCloset
             this.txtThurs.Location = new System.Drawing.Point(125, 325);
             this.txtThurs.Multiline = true;
             this.txtThurs.Name = "txtThurs";
+            this.txtThurs.ReadOnly = true;
             this.txtThurs.Size = new System.Drawing.Size(100, 100);
             this.txtThurs.TabIndex = 5;
             // 
@@ -105,6 +109,7 @@ namespace CapsuleCloset
             this.txtSun.Location = new System.Drawing.Point(575, 325);
             this.txtSun.Multiline = true;
             this.txtSun.Name = "txtSun";
+            this.txtSun.ReadOnly = true;
             this.txtSun.Size = new System.Drawing.Size(100, 100);
             this.txtSun.TabIndex = 8;
             // 
@@ -182,6 +187,7 @@ namespace CapsuleCloset
             this.txtTues.Location = new System.Drawing.Point(350, 175);
             this.txtTues.Multiline = true;
             this.txtTues.Name = "txtTues";
+            this.txtTues.ReadOnly = true;
             this.txtTues.Size = new System.Drawing.Size(100, 100);
             this.txtTues.TabIndex = 3;
             // 
@@ -200,8 +206,10 @@ namespace CapsuleCloset
             this.txtMon.Location = new System.Drawing.Point(200, 175);
             this.txtMon.Multiline = true;
             this.txtMon.Name = "txtMon";
+            this.txtMon.ReadOnly = true;
             this.txtMon.Size = new System.Drawing.Size(100, 100);
             this.txtMon.TabIndex = 2;
+            this.txtMon.TextChanged += new System.EventHandler(this.txtMon_TextChanged);
             // 
             // frmHome
             // 
