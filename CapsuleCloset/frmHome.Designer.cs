@@ -181,6 +181,7 @@ namespace CapsuleCloset
             this.btnShuffle.TabIndex = 16;
             this.btnShuffle.Text = "New Week Shuffle!";
             this.btnShuffle.UseVisualStyleBackColor = true;
+            this.btnShuffle.Click += new System.EventHandler(this.btnShuffle_Click);
             // 
             // txtTues
             // 

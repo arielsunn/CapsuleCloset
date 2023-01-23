@@ -19,13 +19,25 @@ namespace CapsuleCloset
         DataTable jac = WardrobeObject.GetWardrobe("Jackets"); 
         DataTable acc = WardrobeObject.GetWardrobe("Accessories");
 
-        DataTable mon = new DataTable();
-        List<string> tues = new List<string>();
+        readonly DataTable mon = new DataTable();
+        readonly DataTable tues = new DataTable();
+        readonly DataTable wed = new DataTable();
+        readonly DataTable thurs = new DataTable();
+        readonly DataTable fri = new DataTable();
+        readonly DataTable sat = new DataTable();
+        readonly DataTable sun = new DataTable();
+        /*DataTable tues;
+        DataTable wed;
+        DataTable thurs;
+        DataTable fri;
+        DataTable sat;
+        DataTable sun;*/
+        /*List<string> tues = new List<string>();
         List<string> wed = new List<string>();
         List<string> thurs = new List<string>();
         List<string> fri = new List<string>();
         List<string> sat = new List<string>();
-        List<string> sun = new List<string>();
+        List<string> sun = new List<string>();*/
 
 
         public frmHome()
@@ -46,8 +58,10 @@ namespace CapsuleCloset
         {
             this.CenterToScreen();
         }
-       
-        public static void shuffle(DataTable item)
+
+
+
+        public void shuffle(DataTable item)
         {
             //randomize
             //stops program from editing array original values
@@ -59,27 +73,34 @@ namespace CapsuleCloset
             string strStore = string.Empty;
 
             //takes random element from dup (copy of array) and adds to new array for randomization
-            for (int i = 0; i < length; i++)
+            for (int i = 0; i < length-1; i++)
             {
-                int r = rand.Next(0, dup.Rows.Count - 1);
-                store.Rows.Add(dup.Rows[r]);
+                int r = rand.Next(0, dup.Rows.Count-1);
+                DataRow row = store.NewRow();
+                row = dup.Rows[0];
+                store.Rows.Add(row);
 
-                if (length < 7) { 
+                if (length > 7) {
                     dup.Rows[r].Delete();
                 }
+                
             }
 
-            mon.Rows.Add(store.Rows[0]);
-            tues.Add(store[1]);
-            wed.Add(store[2]);
-            thurs.Add(store[3]);
-            fri.Add(store[4]);
-            sat.Add(store[5]);
-            sun.Add(store[6]);
-        }
-        
-        public void shuffleButton(TextBox day) {
-            shuffle(shirts);
+            void sync(DataTable day, int i) {
+                DataRow row = day.NewRow();
+                row = store.Rows[0];
+                store.Rows.Add(row);
+            }
+
+            sync(mon, 0);
+
+            /*mon.Rows.Add(store.Rows[0].ToString());
+            tues.Rows.Add(store.Rows[1]);
+            wed.Rows.Add(store.Rows[2]);
+            thurs.Rows.Add(store.Rows[3]);
+            fri.Rows.Add(store.Rows[4]);
+            sat.Rows.Add(store.Rows[5]);
+            sun.Rows.Add(store.Rows[6]);*/
         }
 
         private void btnEditWardrobe_Click(object sender, EventArgs e)
@@ -99,7 +120,16 @@ namespace CapsuleCloset
 
         private void txtMon_TextChanged(object sender, EventArgs e)
         {
+            Console.WriteLine(mon.ToString());
+        }
 
+        private void btnShuffle_Click(object sender, EventArgs e)
+        {
+            shuffle(shirts);
+            shuffle(pants);
+            shuffle(jac);
+            shuffle(acc);
+            Console.WriteLine(mon.ToString());
         }
     }
 }

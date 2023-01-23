@@ -56,14 +56,21 @@ namespace CapsuleCloset
 
         public void saveWardrobe(DataTable table, DataGridView dg) 
         {
-            for (int i = table.Rows.Count; i < 7; i++)
+            /*for (int i = table.Rows.Count; i < 7; i++)
             {
                 DataRow row = table.NewRow();
                 row[0] = "no more items";
                 table.Rows.Add(row);
                 dg.Update();
                 dg.Refresh();
-                
+            }*/
+
+            if (table.Rows.Count == 0) {
+                DataRow row = table.NewRow();
+                row[0] = "no items added";
+                table.Rows.Add(row);
+                dg.Update();
+                dg.Refresh();
             }
             table.AcceptChanges();
 
