@@ -65,31 +65,36 @@ namespace CapsuleCloset
         {
             //randomize
             //stops program from editing array original values
-            DataTable dup = new DataTable();
-            dup = item;
-            int length = item.Rows.Count;
-            DataTable store = new DataTable();
+
+            List<String> dup = new List<String>();
+            List<String> store = new List<String>();
             Random rand = new Random();
+
+            //convert item into list with type string called dup
+            for (int i = 0; i < item.Rows.Count; i++) {
+                string name = item.Rows[i][0].ToString();                
+                int r = rand.Next(0, dup.Count-1);
+                dup.Insert(r, name);
+            }
+
+            int length = item.Rows.Count;
             string strStore = string.Empty;
 
             //takes random element from dup (copy of array) and adds to new array for randomization
-            for (int i = 0; i < length-1; i++)
+            for (int i = 0; i < 7; i++)
             {
-                int r = rand.Next(0, dup.Rows.Count-1);
-                DataRow row = store.NewRow();
-                row = dup.Rows[0];
-                store.Rows.Add(row);
+                store.
+                    [i] = dup[r][0].ToString();
 
                 if (length > 7) {
-                    dup.Rows[r].Delete();
+                    dup[r]();
                 }
                 
             }
 
             void sync(DataTable day, int i) {
-                DataRow row = day.NewRow();
-                row = store.Rows[0];
-                store.Rows.Add(row);
+                DataRow row = store.Rows[i];
+                day.Rows.Add(row);
             }
 
             sync(mon, 0);
