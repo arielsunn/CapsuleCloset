@@ -19,25 +19,26 @@ namespace CapsuleCloset
         DataTable jac = WardrobeObject.GetWardrobe("Jackets"); 
         DataTable acc = WardrobeObject.GetWardrobe("Accessories");
 
-        readonly DataTable mon = new DataTable();
+        /*readonly DataTable mon = new DataTable();
         readonly DataTable tues = new DataTable();
         readonly DataTable wed = new DataTable();
         readonly DataTable thurs = new DataTable();
         readonly DataTable fri = new DataTable();
         readonly DataTable sat = new DataTable();
         readonly DataTable sun = new DataTable();
-        /*DataTable tues;
+        DataTable tues;
         DataTable wed;
         DataTable thurs;
         DataTable fri;
         DataTable sat;
         DataTable sun;*/
-        /*List<string> tues = new List<string>();
+        List<string> mon = new List<string>();
+        List<string> tues = new List<string>();
         List<string> wed = new List<string>();
         List<string> thurs = new List<string>();
         List<string> fri = new List<string>();
         List<string> sat = new List<string>();
-        List<string> sun = new List<string>();*/
+        List<string> sun = new List<string>();
 
 
         public frmHome()
@@ -65,7 +66,6 @@ namespace CapsuleCloset
         {
             //randomize
             //stops program from editing array original values
-
             List<String> dup = new List<String>();
             List<String> store = new List<String>();
             Random rand = new Random();
@@ -76,6 +76,8 @@ namespace CapsuleCloset
                 int r = rand.Next(0, dup.Count-1);
                 dup.Insert(r, name);
             }
+
+            dup = dup.OrderBy(x => rand.Next()).ToList();
 
             int length = item.Rows.Count;
             string strStore = string.Empty;
