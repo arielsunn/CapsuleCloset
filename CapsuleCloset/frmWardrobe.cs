@@ -47,6 +47,7 @@ namespace CapsuleCloset
 
         private void SetControls()
         {
+            //Sync DataTables with appropriate DataGridViews 
             this.dgShirts.DataSource = shirts;
             this.dgPants.DataSource = pants;
             this.dgJackets.DataSource = jac;
@@ -56,15 +57,7 @@ namespace CapsuleCloset
 
         public void saveWardrobe(DataTable table, DataGridView dg) 
         {
-            /*for (int i = table.Rows.Count; i < 7; i++)
-            {
-                DataRow row = table.NewRow();
-                row[0] = "no more items";
-                table.Rows.Add(row);
-                dg.Update();
-                dg.Refresh();
-            }*/
-
+            //Ensures at least one item in DataTable for randomization purposes
             if (table.Rows.Count == 0) {
                 DataRow row = table.NewRow();
                 row[0] = "no items added";
@@ -72,20 +65,26 @@ namespace CapsuleCloset
                 dg.Update();
                 dg.Refresh();
             }
+
+            //Accepts changes to DataTable, if any
             table.AcceptChanges();
 
+            //Updates the DataGridView to be synced with edited DataTable
             dg.DataSource = table;
         }
 
 
         private void btnSave_Click(object sender, EventArgs e)
         {
+            //Updates DataTables in case there are no items, and saves any edits
             saveWardrobe(shirts, dgShirts);
             saveWardrobe(pants, dgPants);
             saveWardrobe(jac, dgJackets);
             saveWardrobe(acc, dgAccessories);
+
             //Close current form
             this.Close();
+
             //Create a thread to RUN a NEW application with the desired form
             Thread t = new Thread(new ThreadStart(OpenHomePage));
             t.Start();
