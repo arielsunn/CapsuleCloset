@@ -66,48 +66,50 @@ namespace CapsuleCloset
         {
             //randomize
             //stops program from editing array original values
-            List<String> dup = new List<String>();
-            List<String> store = new List<String>();
+            List<String> dup = new List<String>(item.Rows.Count);
             Random rand = new Random();
 
             //convert item into list with type string called dup
             for (int i = 0; i < item.Rows.Count; i++) {
                 string name = item.Rows[i][0].ToString();                
-                int r = rand.Next(0, dup.Count-1);
-                dup.Insert(r, name);
+                //int r = rand.Next(0, item.Rows.Count - 1);
+                dup.Insert(i, name);
             }
 
+            //randomizes the order of dup
             dup = dup.OrderBy(x => rand.Next()).ToList();
 
-            int length = item.Rows.Count;
-            string strStore = string.Empty;
-
-            //takes random element from dup (copy of array) and adds to new array for randomization
-            for (int i = 0; i < 7; i++)
-            {
-                store.
-                    [i] = dup[r][0].ToString();
-
-                if (length > 7) {
-                    dup[r]();
+            void sync(List<string> day, int i) {
+                if (dup.Count() >= 7) {
+                    day.Add(dup.ElementAt(i));
                 }
-                
-            }
-
-            void sync(DataTable day, int i) {
-                DataRow row = store.Rows[i];
-                day.Rows.Add(row);
+                else if (item.Rows.Count > 1)
+                {
+                    day.Add(dup.ElementAt(rand.Next(0, dup.Count())));
+                }
+                else if (item.Rows.Count == 1)
+                {
+                    day.Add(dup.ElementAt(0));
+                }
             }
 
             sync(mon, 0);
+            sync(tues, 1);
+            sync(wed, 2);
+            sync(thurs, 3);
+            sync(fri, 4);
+            sync(sat, 5);
+            sync(sun, 6);
+        }
 
-            /*mon.Rows.Add(store.Rows[0].ToString());
-            tues.Rows.Add(store.Rows[1]);
-            wed.Rows.Add(store.Rows[2]);
-            thurs.Rows.Add(store.Rows[3]);
-            fri.Rows.Add(store.Rows[4]);
-            sat.Rows.Add(store.Rows[5]);
-            sun.Rows.Add(store.Rows[6]);*/
+        public void updateText(TextBox txtDay, List<string> listDay) {
+            string combinedString = string.Join("\r\n", listDay);
+            txtDay.Text = combinedString;
+        }
+
+        public void clearText(TextBox txtDay, List<string> listDay) {
+            txtDay.Clear();
+            listDay.Clear();
         }
 
         private void btnEditWardrobe_Click(object sender, EventArgs e)
@@ -125,18 +127,31 @@ namespace CapsuleCloset
             Application.Run(new frmWardrobe(shirts, pants, jac, acc));
         }
 
-        private void txtMon_TextChanged(object sender, EventArgs e)
-        {
-            Console.WriteLine(mon.ToString());
-        }
-
         private void btnShuffle_Click(object sender, EventArgs e)
         {
             shuffle(shirts);
             shuffle(pants);
             shuffle(jac);
             shuffle(acc);
-            Console.WriteLine(mon.ToString());
+            updateText(txtMon, mon);
+            updateText(txtTues, tues);
+            updateText(txtWed, wed);
+            updateText(txtThurs, thurs);
+            updateText(txtFri, fri);
+            updateText(txtSat, sat);
+            updateText(txtSun, sun);
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            clearText(txtMon, mon);
+            clearText(txtTues, tues);
+            clearText(txtWed, wed);
+            clearText(txtThurs, thurs);
+            clearText(txtFri, fri);
+            clearText(txtSat, sat);
+            clearText(txtSun, sun);
+
         }
     }
 }

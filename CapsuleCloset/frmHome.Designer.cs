@@ -46,6 +46,7 @@ namespace CapsuleCloset
             this.txtTues = new System.Windows.Forms.TextBox();
             this.lblTues = new System.Windows.Forms.Label();
             this.txtMon = new System.Windows.Forms.TextBox();
+            this.btnClear = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelCapsule
@@ -175,7 +176,7 @@ namespace CapsuleCloset
             // 
             // btnShuffle
             // 
-            this.btnShuffle.Location = new System.Drawing.Point(225, 475);
+            this.btnShuffle.Location = new System.Drawing.Point(225, 460);
             this.btnShuffle.Name = "btnShuffle";
             this.btnShuffle.Size = new System.Drawing.Size(125, 25);
             this.btnShuffle.TabIndex = 16;
@@ -210,13 +211,23 @@ namespace CapsuleCloset
             this.txtMon.ReadOnly = true;
             this.txtMon.Size = new System.Drawing.Size(100, 100);
             this.txtMon.TabIndex = 2;
-            this.txtMon.TextChanged += new System.EventHandler(this.txtMon_TextChanged);
+            // 
+            // btnClear
+            // 
+            this.btnClear.Location = new System.Drawing.Point(225, 491);
+            this.btnClear.Name = "btnClear";
+            this.btnClear.Size = new System.Drawing.Size(125, 25);
+            this.btnClear.TabIndex = 17;
+            this.btnClear.Text = "Clear shuffle!";
+            this.btnClear.UseVisualStyleBackColor = true;
+            this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnShuffle);
             this.Controls.Add(this.lblSun);
             this.Controls.Add(this.lblSat);
@@ -261,6 +272,7 @@ namespace CapsuleCloset
         private System.Windows.Forms.TextBox txtTues;
         private System.Windows.Forms.Label lblTues;
         private System.Windows.Forms.TextBox txtMon;
+        private System.Windows.Forms.Button btnClear;
     }
 }
 
