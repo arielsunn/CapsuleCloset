@@ -14,24 +14,11 @@ namespace CapsuleCloset
 {
     public partial class frmHome : Form
     {
-        DataTable shirts = WardrobeObject.GetWardrobe("Shirts"); //new List<string>();
+        DataTable shirts = WardrobeObject.GetWardrobe("Shirts");
         DataTable pants = WardrobeObject.GetWardrobe("Pants"); 
         DataTable jac = WardrobeObject.GetWardrobe("Jackets"); 
         DataTable acc = WardrobeObject.GetWardrobe("Accessories");
 
-        /*readonly DataTable mon = new DataTable();
-        readonly DataTable tues = new DataTable();
-        readonly DataTable wed = new DataTable();
-        readonly DataTable thurs = new DataTable();
-        readonly DataTable fri = new DataTable();
-        readonly DataTable sat = new DataTable();
-        readonly DataTable sun = new DataTable();
-        DataTable tues;
-        DataTable wed;
-        DataTable thurs;
-        DataTable fri;
-        DataTable sat;
-        DataTable sun;*/
         List<string> mon = new List<string>();
         List<string> tues = new List<string>();
         List<string> wed = new List<string>();
