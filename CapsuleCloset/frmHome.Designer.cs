@@ -47,12 +47,13 @@ namespace CapsuleCloset
             this.lblTues = new System.Windows.Forms.Label();
             this.txtMon = new System.Windows.Forms.TextBox();
             this.btnClear = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelCapsule
             // 
             this.labelCapsule.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelCapsule.Location = new System.Drawing.Point(250, 50);
+            this.labelCapsule.Location = new System.Drawing.Point(250, 25);
             this.labelCapsule.Name = "labelCapsule";
             this.labelCapsule.Size = new System.Drawing.Size(300, 50);
             this.labelCapsule.TabIndex = 0;
@@ -222,11 +223,22 @@ namespace CapsuleCloset
             this.btnClear.UseVisualStyleBackColor = true;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
             // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.label1.Location = new System.Drawing.Point(242, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(300, 50);
+            this.label1.TabIndex = 18;
+            this.label1.Text = "Weekly Summary";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frmHome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.btnShuffle);
             this.Controls.Add(this.lblSun);
@@ -273,6 +285,7 @@ namespace CapsuleCloset
         private System.Windows.Forms.Label lblTues;
         private System.Windows.Forms.TextBox txtMon;
         private System.Windows.Forms.Button btnClear;
+        private System.Windows.Forms.Label label1;
     }
 }
 
