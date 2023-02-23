@@ -66,14 +66,18 @@ namespace CapsuleCloset
             //randomizes the order of dup
             dup = dup.OrderBy(x => rand.Next()).ToList();
 
+            //puts contents of shuffled list (dup) in day lists 
             void sync(List<string> day, int i) {
+                //syncs 'i' element of dup with specified day
                 if (dup.Count() >= 7) {
                     day.Add(dup.ElementAt(i));
                 }
+                //program will randomly reuse items for categories with less than 7 items
                 else if (item.Rows.Count > 1)
                 {
                     day.Add(dup.ElementAt(rand.Next(0, dup.Count())));
                 }
+                //program will not go out of bounds for categories containing a single item
                 else if (item.Rows.Count == 1)
                 {
                     day.Add(dup.ElementAt(0));
@@ -90,11 +94,13 @@ namespace CapsuleCloset
         }
 
         public void updateText(TextBox txtDay, List<string> listDay) {
+            //prints contents of listDay in readable format
             string combinedString = string.Join("\r\n", listDay);
             txtDay.Text = combinedString;
         }
 
         public void clearText(TextBox txtDay, List<string> listDay) {
+            //prevents textboxes from keeping multiple shuffles after new week
             txtDay.Clear();
             listDay.Clear();
         }
@@ -138,7 +144,6 @@ namespace CapsuleCloset
             clearText(txtFri, fri);
             clearText(txtSat, sat);
             clearText(txtSun, sun);
-
         }
     }
 }
