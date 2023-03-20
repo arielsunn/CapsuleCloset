@@ -59,7 +59,6 @@ namespace CapsuleCloset
             //convert item into list with type string called dup
             for (int i = 0; i < item.Rows.Count; i++) {
                 string name = item.Rows[i][0].ToString();                
-                //int r = rand.Next(0, item.Rows.Count - 1);
                 dup.Insert(i, name);
             }
 
@@ -73,13 +72,11 @@ namespace CapsuleCloset
                     day.Add(dup.ElementAt(i));
                 }
                 //program will randomly reuse items for categories with less than 7 items
-                else if (item.Rows.Count > 1)
-                {
+                else if (item.Rows.Count > 1) {
                     day.Add(dup.ElementAt(rand.Next(0, dup.Count())));
                 }
                 //program will not go out of bounds for categories containing a single item
-                else if (item.Rows.Count == 1)
-                {
+                else if (item.Rows.Count == 1) {
                     day.Add(dup.ElementAt(0));
                 }
             }
